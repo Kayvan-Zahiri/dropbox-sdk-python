@@ -277,7 +277,7 @@ class _DropboxTransport(object):
             ),
             user_agent or self._raw_user_agent,
             session or self._session,
-            headers or self._headers,
+            self._headers if headers is None else headers,
             timeout or self._timeout,
             oauth2_refresh_token or self._oauth2_refresh_token,
             oauth2_access_token_expiration or self._oauth2_access_token_expiration,
